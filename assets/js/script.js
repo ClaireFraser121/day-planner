@@ -3,7 +3,7 @@ const currentDayElement = document.getElementById('currentDay');
 
 // Use Day.js to get the current date and format it as 'Day of the week, Month Day, Year'
 // Update the text content of the 'currentDayElement' with the formetted current date
-currentDayElement.textContent = day.js().format('dddd, MMMM D, YYYY');
+currentDayElement.textContent = dayjs().format('dddd, MMMM D, YYYY');
 
 
 // Function to set up the current day display 
@@ -29,7 +29,7 @@ function generateTimeblock() {
     const businessHours = ['9 AM', '10AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM'];
 
     // Loop through the business hours
-    businessHours.forEach(hours=> {
+    businessHours.forEach(hour=> {
         // Create a div element for each timeblock
         const timeblock = document.createElement('div');
         timeblock.classList.add('row', 'time-block');
@@ -53,5 +53,17 @@ function generateTimeblock() {
         timeblock.appendChild(hourElement);
         timeblock.appendChild(textarea);
         timeblock.appendChild(saveBtn);
-    })
+
+        // Append the timeblock to the container
+        container.appendChild(timeblock);
+    });
 }
+
+// Call the function when the page is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    setCurrentDay(); // Set up current day display when the page loads
+    generateTimeblock(); // Generate and append timeblock when the page loads
+
+    // Add your other JavaScript code for dynamic functionality here 
+    // For exemple, you can add code for handling user interactions, local storage, etc.
+});
