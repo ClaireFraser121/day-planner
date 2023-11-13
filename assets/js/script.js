@@ -45,8 +45,13 @@ function generateTimeblock() {
         // You can add more attributes or styles to the teaxtarea if needed
 
         // Create a button for saving
-        const saveBtn =document.createElement('button');
-        saveBtn.innerHTML = '<i class="fas fa-save"></i>'
+        const saveBtn = document.createElement('button');
+        saveBtn.classList.add('col-md-1', 'saveBtn');
+        saveBtn.innerHTML = '<i class="fas fa-save"></i>'; // You can customize the button icon
 
+        // Append elements to the timeblock
+        timeblock.appendChild(hourElement);
+        timeblock.appendChild(textarea);
+        timeblock.appendChild(saveBtn);
     })
 }
