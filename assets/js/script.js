@@ -35,6 +35,18 @@ function generateTimeblock() {
         timeblock.classList.add('row', 'time-block');
 
         // Create an element to display the hour
-        
+        const hourElement = document.createElement('div');
+        hourElement.classList.add('col-md-1', 'hour');
+        hourElement.textContent = hour;
+
+        // Create an element for user input ( text area)
+        const textarea = document.createElement('teatarea');
+        textarea.classList.add('col-md-10');
+        // You can add more attributes or styles to the teaxtarea if needed
+
+        // Create a button for saving
+        const saveBtn =document.createElement('button');
+        saveBtn.innerHTML = '<i class="fas fa-save"></i>'
+
     })
 }
