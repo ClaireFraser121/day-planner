@@ -31,7 +31,7 @@ $(document).ready(function () {
     // Grabs values from time, value divs and saves them to local storage 
     $(".saveBtn").click(function (event) {
         event.preventDefault();
-        var value = $(this).siblings(".time-block").val();
+        var value = $(this).siblings("textarea").val();
         var time = $(this).parent().attr("id").split("-")[1];
         localStorage.setItem(time, value);
     });
@@ -39,6 +39,70 @@ $(document).ready(function () {
     // Retrieves items from local storage and sets them in proper places
     $(".time-block").each(function () {
         var time = $(this).attr("id").split("-")[1];
-        $(this).children(".time-block").val(localStorage.getItem(time));
+        $(this).children("textarea").val(localStorage.getItem(time));
     });
+});
+$(document).ready(function () {
+    // Function to generate timeblocks and append them to the container
+    function generateTimeblocks() {
+        // Get the container element
+        const container = $(".container");
+
+        // Get the current hour using Day.js
+        const currentHour = dayjs().hour();
+
+        // Loop through standard business hours
+        for (let hour = 9; hour <= 17; hour++) {
+            // Create a div element for each timeblock
+            const timeblock = $("<div>").addClass("row time-block");
+
+            // Create an element to display the hour
+            const hourElement = $("<div>").addClass("col-md-1 hour");
+            hourElement.text(dayjs().hour(hour).format("h A"));
+
+            // Create an element for user input (textarea)
+            const textarea = $("<textarea>").addClass("col-md-10");
+
+            // Color-code the timeblock based on past, present, or future
+            if (hour < currentHour) {
+                timeblock.addClass("past");
+            } else if (hour === currentHour) {
+                timeblock.addClass("present");
+            } else {
+                timeblock.addClass("future");
+            }
+
+            // Retrieve event from local storage and set it in the textarea
+            const savedEvent = localStorage.getItem(`event-${hour}`);
+            if (savedEvent) {
+                textarea.val(savedEvent);
+            }
+
+            // Create a button for saving
+            const saveBtn = $("<button>").addClass("col-md-1 saveBtn");
+            saveBtn.html('<i class="fas fa-save"></i>');
+
+            // Add an event listener to the timeblock to allow user input
+            timeblock.on('click', function () {
+                // Focus on the textarea when the timeblock is clicked
+                textarea.focus();
+            });
+
+            // Add an event listener to the save button to save the event in local storage
+            saveBtn.on('click', function (event) {
+                event.preventDefault();
+                const eventText = textarea.val();
+                localStorage.setItem(`event-${hour}`, eventText);
+            });
+
+            // Append elements to the timeblock
+            timeblock.append(hourElement, textarea, saveBtn);
+
+            // Append the timeblock to the container
+            container.append(timeblock);
+        }
+    }
+
+    // Call the function when the page is loaded
+    generateTimeblocks();
 });
