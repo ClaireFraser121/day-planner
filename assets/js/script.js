@@ -38,7 +38,7 @@ $(document).ready(function () {
 
     // Retrieves items from local storage and sets them in proper places
     $(".time-block").each(function () {
-        var time = $(this).attr("id").split("-"[1]);
-        $(this).children(".time-block")
-    })
-})
+        var time = $(this).attr("id").split("-")[1];
+        $(this).children(".time-block").val(localStorage.getItem(time));
+    });
+});
