@@ -1,48 +1,4 @@
 $(document).ready(function () {
-    // Day.js code for current date and time
-    let NowMoment = dayjs().format("dddd, MMMM D, YYYY");
-    let displayDate = $("#currentDay");
-    displayDate.text(NowMoment);
-    let currentHour = dayjs().format("HH");
-
-    // Button function to clear local storage and clear contents
-    $("#clearFieldBtn").click(function (event) {
-        event.preventDefault();
-        $("textarea").val("");
-        localStorage.clear();
-    });
-
-    // Grabs hour from each time slot and compares it to actual time
-    $(".time-block").each(function () {
-        var timeDiv = $(this).attr("id").split("-")[1];
-
-        if (currentHour == timeDiv) {
-            $(this).addClass("present");
-            $(this).children(".description").addClass("white-text");
-        } else if (currentHour < timeDiv) {
-            $(this).removeClass("present");
-            $(this).addClass("future");
-        } else if (currentHour > timeDiv) {
-            $(this).removeClass("future");
-            $(this).addClass("past")
-        }
-    });
-
-    // Grabs values from time, value divs and saves them to local storage 
-    $(".saveBtn").click(function (event) {
-        event.preventDefault();
-        var value = $(this).siblings("textarea").val();
-        var time = $(this).parent().attr("id").split("-")[1];
-        localStorage.setItem(time, value);
-    });
-
-    // Retrieves items from local storage and sets them in proper places
-    $(".time-block").each(function () {
-        var time = $(this).attr("id").split("-")[1];
-        $(this).children("textarea").val(localStorage.getItem(time));
-    });
-});
-$(document).ready(function () {
     // Function to generate timeblocks and append them to the container
     function generateTimeblocks() {
         // Get the container element
@@ -57,20 +13,13 @@ $(document).ready(function () {
             const timeblock = $("<div>").addClass("row time-block");
 
             // Create an element to display the hour
-            const hourElement = $("<div>").addClass("col-md-1 hour");
-            hourElement.text(dayjs().hour(hour).format("h A"));
+            const hourElement = $("<div>").addClass("col-md-1 hour").text(dayjs().hour(hour).format("h A"));
 
             // Create an element for user input (textarea)
-            const textarea = $("<textarea>").addClass("col-md-10");
+            const textarea = $("<textarea>").addClass("col-md-9");
 
             // Color-code the timeblock based on past, present, or future
-            if (hour < currentHour) {
-                timeblock.addClass("past");
-            } else if (hour === currentHour) {
-                timeblock.addClass("present");
-            } else {
-                timeblock.addClass("future");
-            }
+            timeblock.addClass(hour < currentHour ? "past" : (hour === currentHour ? "present" : "future"));
 
             // Retrieve event from local storage and set it in the textarea
             const savedEvent = localStorage.getItem(`event-${hour}`);
@@ -79,8 +28,7 @@ $(document).ready(function () {
             }
 
             // Create a button for saving
-            const saveBtn = $("<button>").addClass("col-md-1 saveBtn");
-            saveBtn.html('<i class="fas fa-save"></i>');
+            const saveBtn = $("<button>").addClass("col-md-2 saveBtn").html('<i class="fas fa-save"></i>');
 
             // Add an event listener to the timeblock to allow user input
             timeblock.on('click', function () {
@@ -103,6 +51,17 @@ $(document).ready(function () {
         }
     }
 
+    // Display the current date at the top of the calendar
+    const displayDate = $("#currentDay");
+    displayDate.text(dayjs().format("dddd, MMMM D, YYYY"));
+
     // Call the function when the page is loaded
     generateTimeblocks();
+
+    // Button function to clear local storage and clear contents
+    $("#clearFieldBtn").click(function (event) {
+        event.preventDefault();
+        $("textarea").val("");
+        localStorage.clear();
+    });
 });
