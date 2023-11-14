@@ -10,10 +10,10 @@ $(document).ready(function () {
         // Loop through standard business hours
         for (let hour = 9; hour <= 17; hour++) {
             // Create a div element for each timeblock
-            const timeblock = $("<div>").addClass("time-block");
+            const timeblock = $("<div>").addClass("row time-block");
 
-            // Create an element to display the hour
-            const hourElement = $("<div>").addClass("col-md-1 hour").text(dayjs().hour(hour).format("h A"));
+            // Create an element to display the hour and AM/PM on the same line
+            const hourElement = $("<div>").addClass("col-md-1 hour").text(dayjs().hour(hour).format("hA"));
 
             // Create an element for user input (textarea)
             const textarea = $("<textarea>").addClass("col-md-9");
