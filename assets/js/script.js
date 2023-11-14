@@ -21,7 +21,24 @@ $(document).ready(function () {
             $(this).children(".description").addClass("white-text");
         } else if (currentHour < timeDiv) {
             $(this).removeClass("present");
-            
+            $(this).addClass("future");
+        } else if (currentHour > timeDiv) {
+            $(this).removeClass("future");
+            $(this).addClass("past")
         }
+    });
+
+    // Grabs values from time, value divs and saves them to local storage 
+    $(".saveBtn").click(function (event) {
+        event.preventDefault();
+        var value = $(this).siblings(".time-block").val();
+        var time = $(this).parent().attr("id").split("-")[1];
+        localStorage.setItem(time, value);
+    });
+
+    // Retrieves items from local storage and sets them in proper places
+    $(".time-block").each(function () {
+        var time = $(this).attr("id").split("-"[1]);
+        $(this).children(".time-block")
     })
 })
