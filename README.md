@@ -44,10 +44,11 @@ This daily planner is useful for anyone looking to organize their workday effect
 ## Screenshots
 
 Include screenshots of the application to visually demonstrate its functionality.
+![Work Day Planner Screenshot](./assets/images/work-day-scheduler.png)
 
 ## Demo
 
-View the live demo of the [Work Day Planner](<./assets/images/work-day-scheduler.png>).
+View the live demo of the [Work Day Planner](<https://clairefraser121.github.io/work-day-planner/>).
 
 ## Credits
 
