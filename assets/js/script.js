@@ -13,10 +13,10 @@ $(document).ready(function () {
             const timeblock = $("<div>").addClass("row time-block");
 
             // Create an element to display the hour and AM/PM on the same line
-            const hourElement = $("<div>").addClass("col-md-1 hour").text(dayjs().hour(hour).format("hA"));
+            const hourElement = $("<div>").addClass("col-md-1 col-sm-2 hour").text(dayjs().hour(hour).format("hA"));
 
             // Create an element for user input (textarea)
-            const textarea = $("<textarea>").addClass("col-md-9");
+            const textarea = $("<textarea>").addClass("col-md-9 col-sm-8");
 
             // Color-code the timeblock based on past, present, or future
             timeblock.addClass(hour < currentHour ? "past" : (hour === currentHour ? "present" : "future"));
@@ -28,7 +28,7 @@ $(document).ready(function () {
             }
 
             // Create a button for saving
-            const saveBtn = $("<button>").addClass("col-md-2 saveBtn").html('<i class="fas fa-save"></i>');
+            const saveBtn = $("<button>").addClass("col-md-2 col-sm-2 saveBtn").html('<i class="fas fa-save"></i>');
 
             // Add an event listener to the timeblock to allow user input
             timeblock.on('click', function () {
