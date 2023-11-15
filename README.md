@@ -5,7 +5,7 @@
 - [Description](#description)
 - [Instructions](#instructions)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
+- [Screenshots](#work-day-planner-webpage)
 - [Demo](#demo)
 - [Credits](#credits)
 - [License](#license)
