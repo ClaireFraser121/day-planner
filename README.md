@@ -41,9 +41,18 @@ This project is a simple calendar application that empowers users to save events
 
 This daily planner is useful for anyone looking to organize their workday effectively. It's particularly handy for employees with a busy schedule who want to add and manage important events throughout the day.
 
-## Screenshots
+# Work Day Planner Webpage
 
-Include screenshots of the application to visually demonstrate its functionality.
+The screenshot showcases the Work Day Planner, a sleek and intuitive web application designed for effective daily schedule management. The top of the page prominently displays the current day, providing users with immediate date reference.
+
+As you scroll down, timeblocks for standard business hours unfold, each intelligently color-coded to denote whether it's in the past, present, or future. This visual cue aids users in quickly identifying their current point in the day.
+
+The application enables users to effortlessly enter events by simply clicking on the relevant timeblock. A clean and user-friendly text area appears, ready for input. The save button, neatly positioned alongside the timeblock, allows users to store their events seamlessly.
+
+Moreover, the Work Day Planner ensures that events persist between page refreshes, enhancing the user experience and preventing data loss. Its responsive design and compatibility with Day.js contribute to a smooth and efficient planning process.
+
+In summary, the Work Day Planner provides an elegant solution for professionals seeking a robust tool to manage their daily tasks with precision and ease.
+
 ![Work Day Planner Screenshot](./assets/images/work-day-scheduler.png)
 
 ## Demo
