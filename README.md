@@ -21,7 +21,7 @@ This project is a simple calendar application that empowers users to save events
 1. Clone the repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-username/work-day-planner.git
+   git clone https://github.com/ClaireFraser121/work-day-planner
 
 1. **Open the `index.html` file in your browser to launch the planner.**
 
@@ -38,22 +38,29 @@ This project is a simple calendar application that empowers users to save events
 7. **Your events persist between refreshes of the page.**
 
 ## Usage
+
 This daily planner is useful for anyone looking to organize their workday effectively. It's particularly handy for employees with a busy schedule who want to add and manage important events throughout the day.
 
 ## Screenshots
+
 Include screenshots of the application to visually demonstrate its functionality.
 
 ## Demo
+
 View the live demo of the [Work Day Planner](<demo_link>).
 
 ## Credits
+
 Starter code provided by Your Instructor's Name.
 
 ## License
+
 This project is licensed under the MIT License.
 
 ## Badges
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Conclusion
+
 The Work Day Planner is a powerful tool for time management, providing a user-friendly interface to schedule and organize daily tasks. Its intuitive design and seamless integration with Day.js make it an essential companion for professionals striving for productivity. Feel free to contribute to the project and enhance its features to meet your unique needs. Happy planning!
