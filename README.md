@@ -47,7 +47,7 @@ Include screenshots of the application to visually demonstrate its functionality
 
 ## Demo
 
-View the live demo of the [Work Day Planner](<demo_link>).
+View the live demo of the [Work Day Planner](<./assets/images/work-day-scheduler.png>).
 
 ## Credits
 
