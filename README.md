@@ -61,7 +61,11 @@ View the live demo of the [Work Day Planner](<https://clairefraser121.github.io/
 
 ## Credits
 
-Starter code provided by Your Instructor's Name.
+- jQuery Tutorial for Beginners #8 - jQuery Chaining
+  - Source: [Net Ninja]( https://www.youtube.com/watch?v=u_srpc8P4H8)
+
+- Format
+  - Source: [Day.js]( https://day.js.org/docs/en/display/format)
 
 ## License
 
