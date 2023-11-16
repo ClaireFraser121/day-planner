@@ -67,6 +67,21 @@ View the live demo of the [Work Day Planner](<https://clairefraser121.github.io/
 - Format
   - Source: [Day.js]( https://day.js.org/docs/en/display/format)
 
+- The setInterval() Function
+  - Source: [UDACITY]( https://www.udacity.com/blog/2021/04/javascript-timers-wait-functions.html)
+
+- Create textarea — Javascript
+  - Source: [Muthu kumar Sathiyanesan]( https://medium.com/@muthurishi84/to-create-a-textarea-element-in-javascript-you-can-use-the-document-createelement-method-2f7a089ebbfc)
+
+- LocalStorage, sessionStorage
+  - Source: [JAVASCRIPT.INFO]( https://javascript.info/localstorage)
+
+- How to create a button in JavaScript dynamically
+  - Source: [3schools]( https://www.3schools.in/2021/11/how-to-create-button-in-javascript.html)
+
+- localStorage in JavaScript: A complete guide
+  - Source: [Nosa Obaseki]( https://blog.logrocket.com/localstorage-javascript-complete-guide/#:~:text=removeItem()%20%3A%20Remove%20an%20item,Clear%20all%20data%20from%20localStorage)
+
 ## License
 
 This project is licensed under the MIT License.
